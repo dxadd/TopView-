@@ -2,6 +2,7 @@ package sample;
 
 import java.sql.*;
 
+//JDBC连接数据库的工具类
 public class Jdbc_Gragon {
 
     private static String url = "jdbc:mysql://localhost:3306/dragonnest?serverTimezone=UTC";

@@ -7,7 +7,7 @@ import java.util.List;
 public class AdminData {
 
 
-    public AdminData() throws SQLException {
+    public AdminData(){
     }
 
     public void addAdmin(Admin one) throws SQLException {
@@ -28,8 +28,8 @@ public class AdminData {
         ptmt.setString(6,one.getAge());
         ptmt.setString(7,one.getIntro());
         ptmt.setString(8,one.getHealth());
-        ptmt.setString(9,one.getUser());
-        ptmt.setString(10,one.getPasswork());
+        ptmt.setString(9,one.getCount());
+        ptmt.setString(10,one.getPassword());
         ptmt.execute();  //执行SQL语句
 
 
@@ -52,8 +52,8 @@ public class AdminData {
         ptmt.setString(5,one.getAge());
         ptmt.setString(6,one.getIntro());
         ptmt.setString(7,one.getHealth());
-        ptmt.setString(8,one.getUser());
-        ptmt.setString(9,one.getPasswork());
+        ptmt.setString(8,one.getCount());
+        ptmt.setString(9,one.getPassword());
         ptmt.setString(10,one.getId());
 
         ptmt.execute();  //执行SQL语句
@@ -91,11 +91,40 @@ public class AdminData {
             dragon.setAge(rs.getString("Gage"));
             dragon.setIntro(rs.getString("Gintro"));
             dragon.setHealth(rs.getString("Ghealth"));
-            dragon.setUser(rs.getString("Guser"));
-            dragon.setPasswork(rs.getString("Ghpassword"));
+            dragon.setCount(rs.getString("Guser"));
+            dragon.setPassword(rs.getString("Ghpassword"));
         }
         return dragon;
     }
+
+    public List<Admin> queryAdmin_Race(String race) throws SQLException {
+        Connection con = Jdbc_Gragon.getConnection();
+        Statement stmt = con.createStatement();
+        String sql = " select * from administrator " + "where Gspecies=? ";
+        PreparedStatement ptmt = con.prepareStatement(sql);//加载SQL语句,预编译
+
+        ptmt.setString(1,race);
+        ResultSet rs = ptmt.executeQuery();  //执行SQL语句
+        List<Admin> dr=new ArrayList<Admin>();
+        Admin dragon;
+        while (rs.next()) {
+            dragon=new Admin();
+            dragon.setId(rs.getString("Gid"));
+            dragon.setName(rs.getString("Gname"));
+            dragon.setSpecies(rs.getString("Gspecies"));
+            dragon.setSex(rs.getString("Gsex"));
+            dragon.setBirthday(rs.getString("Gbirthday"));
+            dragon.setAge(rs.getString("Gage"));
+            dragon.setIntro(rs.getString("Gintro"));
+            dragon.setHealth(rs.getString("Ghealth"));
+            dragon.setCount(rs.getString("Guser"));
+            dragon.setPassword(rs.getString("Ghpassword"));
+            dr.add(dragon);
+
+        }
+        return dr;
+    }
+
     public List<Admin> queryAll() throws SQLException {
 
         Connection con = Jdbc_Gragon.getConnection();
@@ -107,7 +136,7 @@ public class AdminData {
         ResultSet rs = ptmt.executeQuery();  //执行SQL语句
 
         List<Admin> dr=new ArrayList<Admin>();
-        Admin dragon=null;
+        Admin dragon;
 
         while (rs.next()) {
             dragon=new Admin();
@@ -119,8 +148,8 @@ public class AdminData {
             dragon.setAge(rs.getString("Gage"));
             dragon.setIntro(rs.getString("Gintro"));
             dragon.setHealth(rs.getString("Ghealth"));
-            dragon.setUser(rs.getString("Guser"));
-            dragon.setPasswork(rs.getString("Ghpassword"));
+            dragon.setCount(rs.getString("Guser"));
+            dragon.setPassword(rs.getString("Ghpassword"));
             dr.add(dragon);
 
         }

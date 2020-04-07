@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<!--驯龙高手管理活动的页面-->
+<GridPane fx:controller="sample.AdminActivity"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <children>
+        <VBox fx:id="rootVBox" layoutX="0.0" layoutY="0.0" minHeight="650" prefWidth="650" spacing="10">
+            <children>
+                <HBox minHeight="100" prefHeight="100" prefWidth="100" spacing="10">
+
+                    <children>
+                        <!--                        文本输入框-->
+                        <TextField fx:id="adminTextFile" minHeight="50" minWidth="500" promptText="请输入活动种族" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <!--                        搜索按钮-->
+                        <Button id="btn_search" mnemonicParsing="false" onAction="#adminSearch" minHeight="50" minWidth="80" text="搜索活动" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+
+                        </Button>
+                        <!--                        进入种族活动按钮-->
+                        <Button id="btn_intoRace" mnemonicParsing="false" onAction="#admininto" minHeight="50" minWidth="80" text="进入活动" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+
+                        </Button>
+
+
+                    </children>
+                </HBox>
+                <TextArea fx:id="adminTextArea" minHeight="500" minWidth="600" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <HBox minHeight="100" prefHeight="100" prefWidth="100" spacing="30">
+
+                    <children>
+
+                        <!--                        更改活动信息按钮-->
+                        <Button id="updateActivity" mnemonicParsing="false" onAction="#updateActivity" minHeight="50" minWidth="80" text="更改活动"
+                                GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+                        <!--                        增加活动-->
+                        <Button id="addActivity" mnemonicParsing="false" onAction="#addActivity" minHeight="50" minWidth="80" text="增加活动"
+                                GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+
+                        <!--                        删除活动-->
+                        <Button id="deleteActivity" mnemonicParsing="false" onAction="#deleteActivity" minHeight="50" minWidth="80" text="删除活动"
+                                GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+                        <!--                        查询全部活动-->
+                        <Button id="btn_Activity" mnemonicParsing="false" onAction="#allActivity" minHeight="50" minWidth="80" text="全部活动"
+                                GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+                        <!--                        返回上一层-->
+                        <Button id="adminBack" mnemonicParsing="false" onAction="#back" minHeight="50" minWidth="80" text="返回" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+
+                    </children>
+                </HBox>
+            </children>
+
+            <padding>
+                <Insets top="30.0" />
+            </padding>
+        </VBox>
+    </children>
+</GridPane>

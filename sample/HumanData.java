@@ -7,7 +7,7 @@ public class HumanData {
 
         Connection con=Jdbc_Gragon.getConnection();
         Statement stmt=con.createStatement();
-        String sql=" insert into Human" +"(Huser,Hpassword,Hname,Hsex) values("+"?,?,?,?)";
+        String sql=" insert into Human" +"(Huser,Hpassword,Hname,Hsex,Hmoney) values("+"?,?,?,?,?)";
         PreparedStatement ptmt =con.prepareStatement(sql);//加载SQL语句,预编译
 
 
@@ -15,7 +15,7 @@ public class HumanData {
         ptmt.setString(2,one.getPassword());
         ptmt.setString(3,one.getName());
         ptmt.setString(4,one.getSex());
-
+        ptmt.setString(5,one.getMoney());
         ptmt.execute();  //执行SQL语句
 
 
@@ -44,6 +44,7 @@ public class HumanData {
             human.setPassword(rs.getString("Hpassword"));
             human.setName(rs.getString("Hname"));
             human.setSex(rs.getString("Hsex"));
+            human.setMoney(rs.getString("Hmoney"));
         }
 
         return human;

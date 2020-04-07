@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<GridPane fx:controller="sample.AdminController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <children>
+        <VBox fx:id="rootVBox" layoutX="0.0" layoutY="0.0" minHeight="650" prefWidth="650" spacing="10">
+            <children>
+                <HBox minHeight="100" prefHeight="100" prefWidth="100" spacing="10">
+
+                    <children>
+                        <!--                        文本输入框-->
+                        <TextField fx:id="userTextFile" minHeight="50" minWidth="500" promptText="请输入你要查询的种族" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <!--                        搜索按钮-->
+                        <Button id="btn_search" mnemonicParsing="false" onAction="#adminSearch" minHeight="50" minWidth="80" text="搜索" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+
+                        </Button>
+                        <!--                        查询全部种族-->
+                        <Button id="btn_queryRace" mnemonicParsing="false" onAction="#adminQuery" minHeight="50" minWidth="80" text="全部种族" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+
+                        </Button>
+
+
+                    </children>
+                </HBox>
+                <TextArea fx:id="UserTextArea" minHeight="500" minWidth="600" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <HBox minHeight="100" prefHeight="100" prefWidth="100" spacing="10">
+
+                    <children>
+
+<!--                        更改族群信息按钮-->
+                        <Button id="updateRace" mnemonicParsing="false" onAction="#updateRace" minHeight="50" minWidth="80" text="更改族群信息" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+<!--                        增加龙的信息-->
+                        <Button id="addDragon" mnemonicParsing="false" onAction="#addDragon" minHeight="50" minWidth="80" text="增加族群成员" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+<!--                        更改所管理族人的信息-->
+                        <Button id="updateDragon" mnemonicParsing="false" onAction="#updateDragon" minHeight="50" minWidth="80" text="修改族员信息" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+<!--                        删除所管理族人的信息-->
+                        <Button id="deleteDragon" mnemonicParsing="false" onAction="#deleteDragon" minHeight="50" minWidth="80" text="删除族员" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+                        <!--                        进入活动页面-->
+                        <Button id="btn_Activity" mnemonicParsing="false" onAction="#adminActivity" minHeight="50" minWidth="80" text="查看活动" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+
+                        <!--                        查看本种族的评价-->
+                        <Button id="btn_evaluate" mnemonicParsing="false" onAction="#raceEvaluate" minHeight="50" minWidth="80" text="本族评价" GridPane.columnIndex="10"
+                                GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+<!--                        返回登录界面-->
+                        <Button id="adminBack" mnemonicParsing="false" onAction="#back" minHeight="50" minWidth="80" text="退出登录" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+
+                    </children>
+                </HBox>
+            </children>
+
+            <padding>
+                <Insets top="30.0" />
+            </padding>
+        </VBox>
+    </children>
+</GridPane>

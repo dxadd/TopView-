@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+
+<!--龙母管理种族评价的页面-->
+<GridPane fx:controller="sample.LeaderEaluate"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <children>
+        <VBox fx:id="rootVBox" layoutX="0.0" layoutY="0.0" minHeight="650" prefWidth="650" spacing="10">
+            <children>
+                <HBox minHeight="100" prefHeight="100" prefWidth="100" spacing="10">
+
+                    <children>
+                        <!--                        文本输入框-->
+                        <TextField fx:id="visitTextFile" minHeight="50" minWidth="600" promptText="请输入评价的种族" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="0" />
+                        <!--                        搜索对种族评价按钮-->
+                        <Button id="btn_search" mnemonicParsing="false" onAction="#RaceSearch" minHeight="50" minWidth="80" text="搜索评价"
+                                GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+
+                        </Button>
+
+                    </children>
+                </HBox>
+                <TextArea fx:id="visitTextArea" minHeight="500" minWidth="600" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <HBox minHeight="100" prefHeight="100" prefWidth="100" spacing="30">
+
+                    <children>
+
+                        <!--                        返回上一层-->
+                        <Button id="Back" mnemonicParsing="false" onAction="#back" minHeight="50" minWidth="80" text="返回"
+                                GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+                        <!--                        查询龙之谷全部评价-->
+                        <Button id="allEvaluate" mnemonicParsing="false" onAction="#allEvaluate" minHeight="50" minWidth="80" text="全部评价"
+                                GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                        </Button>
+
+                        <!--                        删除评价-->
+                        <Button id="delEvaluate" mnemonicParsing="false" onAction="#delEvaluate" minHeight="50" minWidth="80" text="删除评价"
+                                GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                        </Button>
+
+
+                    </children>
+                </HBox>
+            </children>
+
+            <padding>
+                <Insets top="30.0" />
+            </padding>
+        </VBox>
+    </children>
+</GridPane>

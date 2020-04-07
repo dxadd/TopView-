@@ -1,5 +1,6 @@
 package sample;
 
+//临时存储种族信息
 public class Race {
 
     private String id;

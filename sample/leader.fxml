@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<!--龙母登录成功页面-->
+<GridPane fx:controller="sample.LeaderController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <VBox layoutX="0.0" layoutY="0.0" minHeight="600" prefWidth="650" spacing="10">
+        <padding>
+            <Insets top="30.0"/>
+        </padding>
+        <HBox minHeight="100" prefHeight="100" prefWidth="100" spacing="10">
+
+            <children>
+                <!--                        文本输入框-->
+                <TextField fx:id="LeaderTextFile" minHeight="50" minWidth="500" promptText="请输入你要查询的种族"
+                           GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <!--                        搜索种族成员信息按钮-->
+                <Button id="btn_search" mnemonicParsing="false" onAction="#leaderSearch" minHeight="50"
+                        minWidth="80" text="搜索" GridPane.columnIndex="3" GridPane.halignment="RIGHT"
+                        GridPane.rowIndex="0">
+
+                </Button>
+                <!--                        查询全部种族信息-->
+                <Button id="btn_queryRace" mnemonicParsing="false" onAction="#leaderQueryAll" minHeight="50"
+                        minWidth="80" text="全部种族" GridPane.columnIndex="2" GridPane.halignment="RIGHT"
+                        GridPane.rowIndex="0">
+
+                </Button>
+
+
+            </children>
+        </HBox>
+<!--        显示搜索结果-->
+        <TextArea fx:id="LeaderTextArea" minHeight="500" minWidth="600" GridPane.columnIndex="0"
+                  GridPane.rowIndex="1"/>
+        <HBox minHeight="100" prefHeight="100" prefWidth="100" spacing="20">
+
+            <children>
+
+                <!--                        退出登录-->
+                <Button id="adminBack" mnemonicParsing="false" onAction="#back" minHeight="50" minWidth="80"
+                        text="退出登录" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                </Button>
+
+                <!--                        更改族群信息按钮-->
+                <Button id="updateRace" mnemonicParsing="false" onAction="#updateRace" minHeight="50" minWidth="80"
+                        text="更改族群信息" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                </Button>
+                <!--                        增加族群信息-->
+                <Button id="addRace" mnemonicParsing="false" onAction="#addRace" minHeight="50" minWidth="80"
+                        text="增加族群" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                </Button>
+                <!--                       灭族-->
+                <Button id="deleteRace" mnemonicParsing="false" onAction="#deleteRace" minHeight="50" minWidth="80"
+                        text="删除族群" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                </Button>
+                <!--                        进入驯龙高手页面-->
+                <Button id="leaderAdmin" mnemonicParsing="false" onAction="#LeaderAdmin" minHeight="50" minWidth="80"
+                        text="驯龙高手" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                </Button>
+                <!--                        进入龙之谷活动页面-->
+                <Button id="leaderActivity" mnemonicParsing="false" onAction="#LeaderActivity" minHeight="50" minWidth="80"
+                        text="龙谷活动" GridPane.columnIndex="10" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                </Button>
+                <!--                        进入龙之谷评价页面-->
+                <Button id="leaderevaluate" mnemonicParsing="false" onAction="#LeaderEvaluate" minHeight="50" minWidth="80"
+                        text="龙谷评价" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+
+                </Button>
+
+
+            </children>
+        </HBox>
+    </VBox>
+</GridPane>

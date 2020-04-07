@@ -1,35 +1,15 @@
 package sample;
 
-public class Admin {
+public class Admin extends Human{
     private String id;
-    private String name;
     private String species;
-    private String sex;
     private String birthday;
     private String age;
     private String intro;
     private String health;
-    private String user;
-    private String passwork;
 
     public String getIntro() {
         return intro;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getPasswork() {
-        return passwork;
-    }
-
-    public void setPasswork(String passwork) {
-        this.passwork = passwork;
     }
 
     public String getSpecies() {
@@ -40,21 +20,6 @@ public class Admin {
         this.species = species;
     }
 
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void setIntro(String intro) {
         this.intro = intro;

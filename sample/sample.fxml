@@ -1,8 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.GridPane?>
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+
+<!--主登录界面，控制类在Controller-->
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <VBox layoutX="3.0" layoutY="0.0" minHeight="300" prefWidth="500" spacing="50">
+        <children>
+            <HBox minHeight="100" prefHeight="100" prefWidth="100" spacing="20">
+                <children>
+                    <Label text="Welcome">
+                        <effect>
+                            <!--                            阴影大小-->
+                            <DropShadow height="20" radius="10" width="50"/>
+                        </effect>
+                        <font>
+                            <!--                            字体大小-->
+                            <Font name="System Bold" size="50.0"/>
+                        </font>
+                        <HBox.margin>
+                            <!--                            与左边的距离-->
+                            <Insets left="150.0"/>
+                        </HBox.margin>
+                    </Label>
+                </children>
+            </HBox>
+            <GridPane alignment="TOP_RIGHT" prefWidth="500">
+                <children>
+
+                    <Label alignment="TOP_RIGHT" text="账号" GridPane.columnIndex="0" GridPane.halignment="RIGHT"
+                           GridPane.rowIndex="0">
+                        <effect>
+                            <DropShadow blurType="TWO_PASS_BOX" height="20" radius="10" width="20"/>
+                        </effect>
+                        <font>
+                            <!--                                countd的尺寸-->
+                            <Font size="40" fx:id="x1"/>
+                        </font>
+                        <GridPane.margin>
+                            <Insets left="80.0" top="0" fx:id="x2"/>
+                        </GridPane.margin>
+
+                    </Label>
+                    <!--                       password $x1  表示和count的尺寸一样-->
+                    <Label font="$x1" text="密码" GridPane.columnIndex="0" GridPane.halignment="RIGHT"
+                           GridPane.margin="$x2" GridPane.rowIndex="3">
+                        <effect>
+                            <DropShadow blurType="TWO_PASS_BOX" height="20" radius="10" width="20"/>
+                        </effect>
+                    </Label>
+
+                    <!--                        文本输入框-->
+                    <TextField fx:id="account" minHeight="40" minWidth="300" promptText="请输入你的账号"
+                               GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <PasswordField fx:id="password" minHeight="40" minWidth="300" promptText="请输入密码"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                    <!--                        登录按钮-->
+                    <Button id="btn_login" mnemonicParsing="false" onAction="#LOGIN_M" minHeight="50" minWidth="80"
+                            text="登陆" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                        <effect>
+                            <DropShadow/>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets top="15.0"/>
+                        </GridPane.margin>
+                    </Button>
+                    <!--                        注册按钮-->
+                    <Button id="btn_register" mnemonicParsing="false" onAction="#REGINSTER_M" minHeight="50"
+                            minWidth="80" text="注册" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                        <effect>
+                            <DropShadow/>
+                        </effect>
+                        <GridPane.margin>
+                            <Insets left="80.0" top="15.0"/>
+                        </GridPane.margin>
+                    </Button>
+                </children>
+
+            </GridPane>
+        </children>
+        <padding>
+            <Insets top="30.0"/>
+        </padding>
+    </VBox>
 </GridPane>

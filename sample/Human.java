@@ -4,8 +4,14 @@ public class Human {
     private String password;
     private String name;
     private String sex;
+    private String money="0";
+    public String getMoney() {
+        return money;
+    }
 
-
+    public void setMoney(String money) {
+        this.money = money;
+    }
 
     public void setCount(String count) {
         this.count = count;
